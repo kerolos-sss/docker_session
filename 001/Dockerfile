@@ -11,6 +11,9 @@ RUN npm ci && mkdir /ng-app && mv ./node_modules ./ng-app
 
 WORKDIR /ng-app
 
+# copy the application source files over to the container, 
+# there should be no node_modules folder in here 
+
 COPY . .
 
 ## Build the angular app in production mode and store the artifacts in dist folder
