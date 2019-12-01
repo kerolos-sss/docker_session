@@ -1,5 +1,29 @@
-## hello
+## If we have made it here we are heros :)
+
+### Simple docker-compose file
+
+
+Just bulding
+```
+docker-compose build
+```
+
+
+bringing up the cluster build if necessary
+
+```
+docker-compose up
+```
+
+```
+docker-compose up --build
+```
+
+docker-compose stop
 []()
+
+
+
 
 [for a bit of understanding](http://geekyplatypus.com/dockerise-your-php-application-with-nginx-and-php7-fpm/)
 

@@ -157,9 +157,34 @@ docker port
 
 Will show us the ports exposed
 ```
-docker run -p 8888:80 prakhar1989/static-site
+docker run -p 8888:80 --name static-container prakhar1989/static-site
 ```
-mapping ports to spesific ports
+will mapp host ports ports to spesific ports in the container
+
+
+## trouble shooting
+```
+docker ps
+docker ps -a
+```
+tapping into a working docker  
+this means running another command along side the deomon running on the port
+
+```
+docker exec --it CONTAINER_NAME
+```
+
+```
+docker exec --it static-container
+```
+
+
+
+
+
+
+
+
 
 
 ## Using docker to ececute simgle comaand
