@@ -4,10 +4,9 @@
 
 ## It is working on my machine 
 
-    " Docker	is	an	open platform for	developers	and	sysadmins	to	build, ship, and run	distributed	applications.	Consisting	of	Docker	Engine,	a portable,	lightweight	runVme	and	packaging	tool,	and	Docker	Hub,	a	cloud	service	for	sharing	applications	and	automating	workflows,	Docker	enables	apps	to	be	quickly	assembled	from	components	and	eliminates	the	friction	between	development,    QA,	and	producton environments. "	
+" Docker	is	an	open platform for	developers	and	sysadmins	to	build, ship, and run	distributed	applications.	Consisting	of	Docker	Engine,	a portable,	lightweight	runVme	and	packaging	tool,	and	Docker	Hub,	a	cloud	service	for	sharing	applications	and	automating	workflows,	Docker	enables	apps	to	be	quickly	assembled	from	components	and	eliminates	the	friction	between	development,    QA,	and	producton environments. "	
 
 * definition and images credit to Chris Tankersley https://www.slideshare.net/ctankersley/docker-for-developers-60673839?from_action=save
-
 
 ## Normal Bare-Metal Server 
 ![Normal Bare-Metal Server Diagram](static/images/normal_bare_metal_server.png)
@@ -74,6 +73,95 @@ A Docker Registry is a repository for Docker Images
 - other custom networks my be added to the container
 - a container may be linked with other containers through network aliases 
 
+
+## Docker commands
+
+credits to [docker-curriculum](https://docker-curriculum.com/) 
+
+```
+$ docker run hello-world
+
+Hello from Docker.
+This message shows that your installation appears to be working correctly.
+...
+```
+
+just pulling an image 
+
+```
+$ docker pull busybox
+```
+
+Just running
+```
+docker run busybox
+```
+
+Custome command
+```
+docker run busybox echo "hello from busybox"
+```
+
+Display running continers
+```
+docker ps
+```
+
+dispaly all containers
+```
+docker ps -a
+```
+
+Run and attach shell to a container
+```
+docker run -it busybox sh
+```
+
+Starting existing docker
+```
+docker start CONTAINER_NAME
+
+docker start 305297d7a235
+```
+
+--name
+```
+docker run --name myContiner hellow-world
+```
+Removing a container
+```
+docker rm 305297d7a235 ff0a5c3750b9
+```
+
+removing the container after running
+```
+docker run --rm hello-world
+```
+
+Website
+```
+docker run --rm prakhar1989/static-site
+```
+how to access our website
+
+```
+docker run -d -P --name static-site prakhar1989/static-site
+```
+-P will map all exposed port to arbitrary ports on our host
+
+
+
+```
+docker port
+```
+
+Will show us the ports exposed
+```
+docker run -p 8888:80 prakhar1989/static-site
+```
+mapping ports to spesific ports
+
+
 ## Using docker to ececute simgle comaand
 
 
@@ -85,6 +173,8 @@ A Docker Registry is a repository for Docker Images
     ```
 
 ## Next
+
+[000 Docker file](000/Readme.md)
 
 [001 Dockerfile](001/Readme.md) 
 
