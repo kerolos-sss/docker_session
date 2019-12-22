@@ -19,29 +19,6 @@
 
 ## Getting Started
 
-### docker run
-
-#### will	run	a	container	
-
-#### This	will	not	restart	an	exisVng	container,	just	create	a	new	one
-
-```
-docker	run	[opVons]	IMAGE	[command]	[arguments]	
-```
-
-#### [opVons	]modify	the	docker	process	for	this	container	
-
-#### IMAGE	is	the	image	to	use	
-
-#### [command]	is	the	command	to	run	inside	the	container	
-
-#### [arguments] are arguments for the	command	that is run inside the container
-
-
-- each time we run an image a new container is created 
-- how to avoid this
-    - giving the container a name.
-    - removing the container once finished
 
 
 ### Docker Registery
@@ -76,6 +53,23 @@ A Docker Registry is a repository for Docker Images
 
 ## Docker commands
 
+### docker run
+
+#### will run	a container	
+
+```
+docker	run	[opVons]	IMAGE	[command]	[arguments]	
+```
+
+#### [opVons	]modify	the	docker	process	for	this	container	
+
+#### IMAGE	is	the	image	to	use	
+
+#### [command]	is	the	command	to	run	inside	the	container	
+
+#### [arguments] are arguments for the	command	that is run inside the container
+
+
 credits to [docker-curriculum](https://docker-curriculum.com/) 
 
 ```
@@ -89,7 +83,7 @@ This message shows that your installation appears to be working correctly.
 just pulling an image 
 
 ```
-$ docker pull busybox
+docker pull busybox
 ```
 
 Just running
@@ -124,13 +118,23 @@ docker start CONTAINER_NAME
 docker start 305297d7a235
 ```
 
+
+- each time we run an image a new container is created 
+- how to avoid this
+    - giving the container a name. --name
+    - removing the container once finished --rm
+```
+docker start CONTAINER_NAME
+
+```
+
 --name
 ```
 docker run --name myContiner hellow-world
 ```
 Removing a container
 ```
-docker rm 305297d7a235 ff0a5c3750b9
+docker rm myContainer ff0a5c3750b9
 ```
 
 removing the container after running
